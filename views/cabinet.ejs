@@ -1,22 +1,42 @@
 <%- include('partials/header') -%>
 <div class="container">
-  <div class="row mt-5">
-      
-      <div class="col-6">
+  <div class="row justify-content-center mt-5">
         <ul class="row list-unstyled">
-        <% for(var i=0; i<posts.length; i++) {%>
-          <li class="col-6 justify-content-between mt-5">
-            <a href="/post/<%= posts[i]._id%>">
-              <h2><%= posts[i].title%></h2>
-              <img class="img-fluid" src="<%= posts[i].image%>">
-            </a>
-          </li>
-        <% } %>
+            <% for(var i=0; i<posts.length; i++) {%>
+                <!-- Card -->
+                <div class="col-auto mt-3">
+                    <div class="card" style="width: 18rem;">
+                    <a href="/post/<%= posts[i]._id%>">
+                        <img src="<%= posts[i].image%>" class="card-img-top" alt="...">
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title"><%= posts[i].title %></h5>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Dose:
+                        <%= posts[i].dose %>
+                        </li>
+                        <li class="list-group-item">Frequency:
+                        <%= posts[i].frequency %>
+                        </li>
+                        <li class="list-group-item">Next Dose:
+                        <%= posts[i].nextDose %>
+                        </li>
+                    </ul>
+                    <div class="card-body">
+                        <a href="#" class="card-link">Update Medication</a>
+                        
+                    </div>
+                    </div>
+                </div>
+                <!-- /Card -->
+            </li>
+            <% } %>
         </ul>
+
         <div class="row justify-content-center mt-5">
-          <a class="btn btn-primary" href="/feed">Return to Feed</a>
+        <a class="btn btn-primary" href="/profile">Add Medication</a>
         </div>  
-      </div>  
     </div>
   </div>
 </div>
