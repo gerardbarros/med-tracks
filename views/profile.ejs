@@ -11,18 +11,31 @@
             <h2>Add a post</h2>
             <form action="/post/createPost" enctype="multipart/form-data" method="POST">
               <div class="mb-3">
-                  <label for="title" class="form-label">Title</label>
-                  <input type="text" class="form-control" id="title" name="title">
-              </div>
-              <div class="mb-3">
-                <label for="caption" class="form-label">Caption</label>
-                <textarea class="form-control" id="caption" name="caption"></textarea>
-              </div>
-              <div class="mb-3">
-                <label for="imgUpload" class="form-label">Image</label>
-                <input type="file" class="form-control" id="imageUpload" name="file">
-              </div>
-              <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
+                <label for="title" class="form-label">Medication Name</label>
+                <input type="text" class="form-control" id="title" name="title">
+            </div>
+            <div class="mb-3">
+                <label for="dose" class="form-label">Medication Dose</label>
+                <input type="text" class="form-control" id="dose" name="dose">
+            </div>
+            <div class="mb-3">
+                <label for="frequency" class="form-label">Medication Frequency</label>
+                <input type="text" class="form-control" id="frequency" name="frequency">
+            </div>
+            <div class="mb-3">
+                <label for="lastTaken" class="form-label">Last Taken</label>
+                <input type="datetime-local" class="form-control" id="lastTaken" name="lastTaken">
+            </div>
+            <div class="mb-3">
+                <label for="nextDose" class="form-label">Next Dose</label>
+                <input type="datetime-local" class="form-control" id="nextDose" name="nextDose">
+            </div>
+            
+            <div class="mb-3">
+              <label for="imgUpload" class="form-label">Image</label>
+              <input type="file" class="form-control" id="imageUpload" name="file">
+            </div>
+            <button type="submit" class="btn btn-primary" style="background-color: #8d99ae"  value="Upload">Submit</button>
             </form>
           </div>
       </div>

@@ -5,6 +5,22 @@ const PostSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  dose: {
+    type: String,
+    required: true,
+  },
+  frequency: {
+    type: String,
+    required: true,
+  },
+  lastTaken: {
+    type: Date, String,
+    required: true,
+  },
+  nextDose: {
+    type: Date, String,
+    required: true,
+  },
   image: {
     type: String,
     require: true,
@@ -12,14 +28,6 @@ const PostSchema = new mongoose.Schema({
   cloudinaryId: {
     type: String,
     require: true,
-  },
-  caption: {
-    type: String,
-    required: true,
-  },
-  likes: {
-    type: Number,
-    required: true,
   },
   user: {
     type: mongoose.Schema.Types.ObjectId,

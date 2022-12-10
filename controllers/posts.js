@@ -48,10 +48,12 @@ module.exports = {
       //media is stored on cloudainary - the above request responds with url to media and the media id that you will need when deleting content 
       await Post.create({
         title: req.body.title,
+        dose: req.body.dose,
+        frequency: req.body.frequency,
+        lastTaken: req.body.lastTaken,
+        nextDose: req.body.nextDose,
         image: result.secure_url,
         cloudinaryId: result.public_id,
-        caption: req.body.caption,
-        likes: 0,
         user: req.user.id,
       });
       console.log("Post has been added!");
@@ -60,6 +62,32 @@ module.exports = {
       console.log(err);
     }
   },
+/* 
+  editPost: async (req, res) => {
+    try {
+      // Upload image to cloudinary
+      const result = await cloudinary.uploader.upload(req.file.path);
+
+      //media is stored on cloudainary - the above request responds with url to media and the media id that you will need when deleting content 
+      await Post.create({
+        title: req.body.title,
+        dose: req.body.dose,
+        frequency: req.body.frequency,
+        lastTaken: req.body.lastTaken,
+        nextDose: req.body.nextDose,
+        image: result.secure_url,
+        cloudinaryId: result.public_id,
+        user: req.user.id,
+      });
+      console.log("Post has been added!");
+      res.redirect("/profile");
+    } catch (err) {
+      console.log(err);
+    }
+  },
+*/
+
+
   likePost: async (req, res) => {
     try {
       await Post.findOneAndUpdate(
